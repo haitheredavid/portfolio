@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Nav,
   NavLink,
@@ -6,35 +6,33 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
-} from './navbarelement';
-  
+} from "./navbarelement";
+
 const Navbar = () => {
   return (
     <>
       <Nav>
         <Bars />
-          <NavMenu>
-          <NavLink to='/about' activeStyle>
-            About
+        <NavMenu>
+          <NavLink to="/landing" activeStyle>
+            HaiThere
           </NavLink>
-          <NavLink to='/projects' activeStyle>
+          <NavLink to="/projects" activeStyle>
             Projects
           </NavLink>
-          <NavLink to='/sketches' activeStyle>
+          <NavLink to="/sketches" activeStyle>
             Sketches
           </NavLink>
-          <NavLink to='/posts' activeStyle>
+          <NavLink to="/posts" activeStyle>
             Posts
           </NavLink>
-          {/* Second Nav */}
-          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+          <NavLink to="/about" activeStyle>
+            About
+          </NavLink>
         </NavMenu>
-        <NavBtn>
-          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-        </NavBtn>
       </Nav>
     </>
   );
 };
-  
+
 export default Navbar;
