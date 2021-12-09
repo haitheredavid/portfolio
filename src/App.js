@@ -1,35 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Navbar, NavbarBrand } from 'reactstrap';
-import Menu from './components/menu';
-import { PROJECTS } from './shared/projects';
-import Greet from './components/greet';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
-class App extends React.Component {					
-  
-	constructor(props){
-		super(props);
-		
-		this.state = {
-			projects: PROJECTS
-		};
-	}
-	
-	render(){
-		return (
-			<div className='App'>
-				<Navbar color="primary">
-					<div className="container" id="brand">
-						<NavbarBrand>Incredible India</NavbarBrand>
-					</div>
-				</Navbar>
-				<Greet />
-				{/* <h1>Famous Places of India</h1> */}
-				{/* <Menu projects={this.state.projects} /> */}
-			</div>
-		);
-	}
+import Navbar from "./components/navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages";
+import About from "./pages/about";
+import Projects from "./pages/projects";
+import Sketches from "./pages/sketches";
+import Posts from "./pages/posts";
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/projects" element={<Projects/>} />
+        <Route path="/posts" element={<Posts/>} />
+        <Route path="/sketches" element={<Sketches/>} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
