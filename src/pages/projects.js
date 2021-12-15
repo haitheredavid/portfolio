@@ -1,6 +1,9 @@
 import React from 'react';
-  
-const testproject = () => {
+
+
+
+
+const projects = () => {
   return (
     <div
       style={{
@@ -15,4 +18,4 @@ const testproject = () => {
   );
 };
   
-export default testproject;
+export default projects;
