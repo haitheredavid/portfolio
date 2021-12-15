@@ -4,6 +4,7 @@ const Sketches = () => {
   return (
     <div
       style={{
+        padding:'10',
         display: 'flex',
         justifyContent: 'Right',
         alignItems: 'Right',

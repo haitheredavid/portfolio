@@ -1,38 +1,76 @@
+import {Link} from "react-router-dom";
 import React from "react";
 import {
-  Nav,
-  NavLink,
-  Bars,
-  NavMenu,
-  NavBtn,
-  NavBtnLink,
-} from "./navbarelement";
+    AppBar,
+    Toolbar,
+    CssBaseline,
+    Typography,
+    makeStyles,
+} from "@material-ui/core";
 
-const Navbar = () => {
-  return (
-    <>
-      <Nav>
-        <Bars />
-        <NavMenu>
-          <NavLink to="/landing" activeStyle>
-            HaiThere
-          </NavLink>
-          <NavLink to="/projects" activeStyle>
-            Projects
-          </NavLink>
-          <NavLink to="/sketches" activeStyle>
-            Sketches
-          </NavLink>
-          <NavLink to="/posts" activeStyle>
-            Posts
-          </NavLink>
-          <NavLink to="/about" activeStyle>
-            About
-          </NavLink>
-        </NavMenu>
-      </Nav>
-    </>
-  );
-};
+const useStyles = makeStyles((theme) => ({
+    navLinks: {
+        marginLeft: theme.spacing(5),
+        display: "flex",
+        fontSize: "20px",
+        fontWeight: 'normal',
+        // padding: "10px",
+        justifyContent: 'space-between',
+        textDecoration: "none",
+        color: "white",
+        "&:hover": {
+            color: "yellow",
+            borderBottom: "1px solid white",
+        },
+    },
+    barRoot: {
+        backgroundColor: "black",
+    },
+    logo: {
+        flexGrow: "1",
+        cursor: "pointer",
+        fontSize: "30px",
+        color: "gray",
+        textDecoration: "none",
+        fontWeight: 'bold',
+    },
+    link: {
+        textDecoration: "none",
+        color: "gray",
+        marginRight: theme.spacing(20),
+        "&:hover": {
+            color: "yellow",
+            borderBottom: "1px solid white",
+        },
+    },
+}));
+
+
+function Navbar() {
+    const classes = useStyles();
+
+    return (
+        <AppBar position="static">
+            <CssBaseline/>
+            <Toolbar classes={{root: classes.barRoot}}>
+                <Link to="/landing" className={classes.logo} activeStyle>
+                    HaiThere
+                </Link>
+                <Link to="/projects" className={classes.navLinks} activeStyle>
+                    Projects
+                </Link>
+                <Link to="/sketches" className={classes.navLinks} activeStyle>
+                    Sketches
+                </Link>
+                <Link to="/posts" className={classes.navLinks} activeStyle>
+                    Posts
+                </Link>
+                <Link to="/about" className={classes.navLinks} activeStyle>
+                    About
+                </Link>
+            </Toolbar>
+        </AppBar>
+    );
+}
 
 export default Navbar;
